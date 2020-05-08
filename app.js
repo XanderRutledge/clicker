@@ -85,6 +85,6 @@ const interval = setInterval(function () {
     jawaSteal()
     shipSteal()
     update()
-}, 3000);
+}, 1000);
 
 update()

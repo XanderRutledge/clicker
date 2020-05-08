@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Document</title>
+    <title>Part Scrapper | R2-D2</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -21,55 +22,62 @@
             </div>
         </div>
     </header>
+
     <main>
         <div class="container-fluid mb-3">
             <div class="row justify-content-center">
-                <div class="col-12 text-center">
+                <div class="col-12 text-center my-3">
                     <img onclick="steal()" src="R2.png" alt="R2-D2">
                 </div>
-                <div class="row">
+                <div class="row my-3">
                     <div class="col text-center">
-                        <h2>stats</h2>
-                        <h4>parts every 3 seconds: <span id=pps></span></h4>
+                        <h2>Stats</h2>
+                        <h4>parts every second: <span id=pps></span></h4>
                         <h4>scrapper modifier: +<span id=scrapMod></span></h4>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="container-fluid">
             <div class="row d-flex justify-content-center">
                 <div class="col text-center my-2">
                     <h1>Parts Stolen: <span id="parts"></span></h1>
                 </div>
             </div>
-            <div class="row justify-content-center d-flex ">
-                <div class=" col-6 col-md-4 ">
-                    <div class="row flex-column text-center">
-                        <h2>Upgrades</h2>
-                        <div class="col">
-                            <button onclick="tools()" class="btn btn-primary btn-lg">tools</button></div>
-                        <div class="col">
-                            <button onclick="jawa()" class="btn btn-primary btn-lg">jawas</button></div>
-                        <div class="col">
-                            <button onclick="rBolt()" class="btn btn-primary btn-lg">Restraint Bolt</button></div>
-                        <div class="col">
-                            <button onclick="ship()" class="btn btn-primary btn-lg">ship</button></div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row justify-content-center d-flex my-3 ">
+                <div class="col-md-6 ">
+                    <div class="row flex-column text-center ">
+                        <h2>Upgrades:</h2>
+                        <div class="col my-2">
+                            <button onclick="tools()" class="btn btn-primary btn-lg">tools</button>
+                            <h3 class="py-3"><span id="toolPrice"></span> parts</h3>
+                        </div>
+                        <div class="col my-2">
+                            <button onclick="jawa()" class="btn btn-primary btn-lg">jawas</button>
+                            <h3 class="py-2"><span id="jawaPrice"></span> parts</h3>
+                        </div>
+                        <div class="col my-2">
+                            <button onclick="rBolt()" class="btn btn-primary btn-lg">Restraint Bolt</button>
+                            <h3 class="py-3"><span id="rBoltprice"></span> parts</h3>
+                        </div>
+                        <div class="col my-2">
+                            <button onclick="ship()" class="btn btn-primary btn-lg">ship</button>
+                            <h3 class="py-2"><span id="shipPrice"></span> parts</h3>
+                        </div>
                     </div>
 
                 </div>
-                <div class="col-6 col-md-4 text-center">
-                    <h2>Prices</h2>
-                    <h3><span id="toolPrice"></span> parts</h3>
-                    <h3><span id="jawaPrice"></span> parts</h3>
-                    <h3><span id="rBoltprice"></span> parts</h3>
-                    <h3><span id="shipPrice"></span> parts</h3>
-                </div>
-                <div class="col-md-4 text-center">
-                    <h1>Bought</h1>
-                    <h3>tools bought: <span id="tools"></span></h3>
-                    <h3>jawas bribed: <span id="jawa"></span></h3>
-                    <h3>Restraint bolts placed: <span id="rBolt"></span></h3>
-                    <h3>Ships Bought: <span id="ships"></span></h3>
+
+                <div class="col-md-3 text-center">
+                    <h1>Bought:</h1>
+                    <h3 class="py-3">Tools bought: <span id="tools"></span></h3>
+                    <h3 class="py-2">Jawas bribed: <span id="jawa"></span></h3>
+                    <h3 class="py-3">Restraint bolts: <span id="rBolt"></span></h3>
+                    <h3 class="py-2">Ships bought: <span id="ships"></span></h3>
                 </div>
             </div>
         </div>
