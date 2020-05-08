@@ -7,15 +7,26 @@ var r2 = {
     tools: 0,
     jawas: 0,
     rBolts: 0,
+    ships: 0,
 }
 
 var toolPrice = 50
 var jawaPrice = 100
 var rBoltprice = 1000
+var shipPrice = 100000
 
 function steal() {
     r2.parts += r2.mods
     document.getElementById("parts").innerText = r2.parts
+}
+
+function ship() {
+    if (r2.parts >= shipPrice) {
+        r2.parts -= shipPrice
+        shipPrice += Math.floor(shipPrice * 2)
+        r2.ships += 10000
+        update()
+    } else { alert("you dont have enough parts") }
 }
 
 function tools() {
@@ -51,20 +62,28 @@ function jawaSteal() {
     r2.parts += r2.jawas
 }
 
+function shipSteal() {
+    r2.parts += r2.ships
+}
+
 function update() {
     document.getElementById("tools").innerText = r2.tools
     document.getElementById("parts").innerText = r2.parts
     document.getElementById("rBoltprice").innerText = rBoltprice
-    document.getElementById("pps").innerText = r2.jawas
+    document.getElementById("pps").innerText = r2.jawas + r2.ships
     document.getElementById("scrapMod").innerText = r2.mods - 1
     document.getElementById("jawaPrice").innerText = jawaPrice
     document.getElementById("toolPrice").innerText = toolPrice
     document.getElementById("jawa").innerText = r2.jawas / 5
     document.getElementById("rBolt").innerText = r2.rBolts
+    document.getElementById("shipPrice").innerText = shipPrice
+    document.getElementById("ships").innerText = r2.ships
+
 }
 
 const interval = setInterval(function () {
     jawaSteal()
+    shipSteal()
     update()
 }, 3000);
 
