@@ -77,7 +77,7 @@ function update() {
     document.getElementById("jawa").innerText = r2.jawas / 5
     document.getElementById("rBolt").innerText = r2.rBolts
     document.getElementById("shipPrice").innerText = shipPrice
-    document.getElementById("ships").innerText = r2.ships
+    document.getElementById("ships").innerText = r2.ships / 10000
 
 }
 

@@ -1,6 +1,9 @@
 body{
     color:orange;
     background-color: black;
+    background-image: url(hyperspce.jpg) ;
+    background-position: center;
+    background-size: cover;
     font-family: 'Press Start 2P', cursive;
     display: flex;
     flex-direction: column;
